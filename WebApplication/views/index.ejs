@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a class="nav-logo" href="/">Blogger</a>
+        <a class="btn-create" href="/posts">+ Create Post</a>
+    </nav>
+
+    <!-- Hero / Intro -->
+    <section class="hero">
+        <h2>Welcome to the World of Writers!</h2>
+        <p>
+            Dive into a world where every word has a story to tell. Read, write, and explore the
+            endless oceans of imagination, experiences, and ideas waiting to be discovered.
+        </p>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section">
+        <p class="features-title">Features</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">✍️</div>
+                <p>Write and publish unlimited blog posts with a simple and intuitive editor.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <p>Explore a community of writers and discover stories that resonate with you.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛠️</div>
+                <p>Stay in control of your content by updating or removing posts at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Published Posts -->
+    <section class="posts-section">
+        <h2 class="posts-title">Published Posts</h2>
+        <div class="posts-grid">
+            <% if (posts.length === 0) { %>
+                <p class="no-posts">No posts yet — be the first to write something!</p>
+            <% } %>
+            <% posts.forEach(post => { %>
+            <div class="post-card">
+                <h2><%= post.title %></h2>
+                <p><%= post.content %></p>
+                <div class="post-actions">
+                    <a class="btn-edit" href="/edit/<%= post.id %>">Edit</a>
+                    <a class="btn-delete" href="/delete/<%= post.id %>">Delete</a>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>World of Writers — A place where every story finds its voice.</p>
+        <p>© 2026 World of Writers. Built with Node.js, Express, and EJS.</p>
+    </footer>
+
+</body>
+</html>

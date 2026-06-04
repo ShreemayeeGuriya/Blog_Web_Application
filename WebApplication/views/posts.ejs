@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post — Blogger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="write-page">
+
+    <!-- Navbar -->
+    <nav class="write-nav">
+        <a class="nav-logo" href="/">Blogger</a>
+        <a class="btn-create" href="/">← Back to Posts</a>
+    </nav>
+
+    <!-- Create Form -->
+    <div class="write-container">
+        <h1 class="write-heading">New Post</h1>
+        <form class="write-form" action="/posts" method="POST">
+            <input
+                class="write-input"
+                type="text"
+                name="title"
+                placeholder="Give your post a title..."
+            >
+            <textarea
+                class="write-textarea"
+                name="content"
+                placeholder="Write your story..."
+            ></textarea>
+            <div class="write-submit-row">
+                <button class="btn-publish" type="submit">Publish</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
